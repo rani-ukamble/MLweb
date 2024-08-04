@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-body">
+                <h2 class="card-title text-center">Predict Your Future Marks</h2>
+                <form method="post" action="/predict">
+                    <div class="form-group">
+                        <label for="hours">Hours Studied:</label>
+                        <input type="number" class="form-control" id="hours" name="hours" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Predict</button>
+                </form>
+                {% if prediction_text %}
+                    <div class="alert alert-success mt-3">
+                        {{ prediction_text }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
